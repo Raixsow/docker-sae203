@@ -16,19 +16,19 @@ public class PanelCentral extends JPanel
     {
         this.frameAppli = frameAppli;
 
-        this.setLayout( new GridLayout(3, 1) );
+        this.setLayout( new GridLayout(1, 3) );
 
         /*------------------------ */
         /* Création des composants */
         /*------------------------ */
-        this.lblChoixPerso = new JLabel();
-        this.lblChoixPerso.setPreferredSize( new Dimension(512, 512) );
+        this.lblChoixPerso = new JLabel( new ImageIcon( "Pierre_Feuille_Ciseaux/images/Vide.png" ) );
+        this.lblChoixPerso.setPreferredSize( new Dimension(256, 256) );
 
-        this.lblChoixAdversaire = new JLabel();
-        this.lblChoixAdversaire.setPreferredSize( new Dimension(512, 512) );
+        this.lblChoixAdversaire = new JLabel( new ImageIcon( "Pierre_Feuille_Ciseaux/images/Vide.png" ) );
+        this.lblChoixAdversaire.setPreferredSize( new Dimension(256, 256) );
 
-        JLabel lblResultat = new JLabel( "Vs" );
-        lblResultat.setPreferredSize( new Dimension(200, 200));
+        JLabel lblResultat = new JLabel( "Vs", SwingConstants.CENTER );
+        lblResultat.setPreferredSize( new Dimension(256, 256));
 
         /* ----------------------------- */
         /* positionnement des composants */

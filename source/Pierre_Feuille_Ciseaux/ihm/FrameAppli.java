@@ -22,7 +22,7 @@ public class FrameAppli extends JFrame implements ActionListener
 		this.setLayout( new BorderLayout() );
 
 		this.setTitle("Pierre-Feuille-Ciseaux");
-		this.setSize(650, 475);
+		this.setSize(875, 625);
 
 		/*------------------------ */
         /* Création des composants */
@@ -44,6 +44,13 @@ public class FrameAppli extends JFrame implements ActionListener
 		this.add( panelSud, BorderLayout.SOUTH );
 		this.add( this.panelCentral, BorderLayout.CENTER );
 
+		/* ------------------------- */
+        /* Activation des composants */
+        /* ------------------------- */
+		this.btnPierre .addActionListener( this );
+		this.btnFeuille.addActionListener( this );
+		this.btnCiseaux.addActionListener( this );
+
 		this.setVisible(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
@@ -55,8 +62,6 @@ public class FrameAppli extends JFrame implements ActionListener
 		if ( e.getSource() == this.btnPierre  ) sRet = this.ctrl.getNom( 0 );
 		if ( e.getSource() == this.btnFeuille ) sRet = this.ctrl.getNom( 1 );
 		if ( e.getSource() == this.btnCiseaux ) sRet = this.ctrl.getNom( 2 );
-
-		sRet += "_gauche";
 
 		this.panelCentral.setImageGauche(sRet);
 	}

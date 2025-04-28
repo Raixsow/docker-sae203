@@ -28,7 +28,7 @@ public class PFC
 	{
 		switch (choix) 
 		{
-			case    PFC.PIERRE  -> { return "Piere"  ; }
+			case    PFC.PIERRE  -> { return "Pierre" ; }
 			case    PFC.FEUILLE -> { return "Feuille"; }
 			case    PFC.CISEAUX -> { return "Ciseaux"; }
 			default             -> { return ""       ; }
