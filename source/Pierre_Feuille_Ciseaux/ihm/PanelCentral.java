@@ -1,7 +1,6 @@
 package Pierre_Feuille_Ciseaux.ihm;
 
 import javax.swing.*;
-import java.awt.event.*;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 
@@ -27,14 +26,14 @@ public class PanelCentral extends JPanel
         this.lblChoixAdversaire = new JLabel( new ImageIcon( "Pierre_Feuille_Ciseaux/images/Vide.png" ) );
         this.lblChoixAdversaire.setPreferredSize( new Dimension(256, 256) );
 
-        JLabel lblResultat = new JLabel( "Vs", SwingConstants.CENTER );
-        lblResultat.setPreferredSize( new Dimension(256, 256));
+        JLabel lblVs = new JLabel( "Vs", SwingConstants.CENTER );
+        lblVs.setPreferredSize( new Dimension(256, 256));
 
         /* ----------------------------- */
         /* positionnement des composants */
         /* ----------------------------- */
         this.add(this.lblChoixPerso);
-        this.add(lblResultat);
+        this.add(lblVs);
         this.add(this.lblChoixAdversaire);
     }
 

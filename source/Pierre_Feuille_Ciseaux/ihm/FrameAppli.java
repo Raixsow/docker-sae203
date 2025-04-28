@@ -10,6 +10,7 @@ public class FrameAppli extends JFrame implements ActionListener
 {
 	private Controleur ctrl;
 	private PanelCentral panelCentral;
+	private PanelNord    panelNord;
 
 	private JButton btnPierre;
 	private JButton btnFeuille;
@@ -32,6 +33,7 @@ public class FrameAppli extends JFrame implements ActionListener
 		this.btnCiseaux = new JButton( "Ciseaux" );
 
 		this.panelCentral = new PanelCentral( this );
+		this.panelNord    = new PanelNord   ( this );
 
 		/* ----------------------------- */
         /* positionnement des composants */
@@ -41,7 +43,8 @@ public class FrameAppli extends JFrame implements ActionListener
 		panelSud.add ( this.btnFeuille );
 		panelSud.add ( this.btnCiseaux );
 
-		this.add( panelSud, BorderLayout.SOUTH );
+		this.add( this.panelNord   , BorderLayout.NORTH  );
+		this.add( panelSud         , BorderLayout.SOUTH  );
 		this.add( this.panelCentral, BorderLayout.CENTER );
 
 		/* ------------------------- */
@@ -57,12 +60,8 @@ public class FrameAppli extends JFrame implements ActionListener
 
 	public void actionPerformed(ActionEvent e)
 	{
-		String sRet = "";
-
-		if ( e.getSource() == this.btnPierre  ) sRet = this.ctrl.getNom( 0 );
-		if ( e.getSource() == this.btnFeuille ) sRet = this.ctrl.getNom( 1 );
-		if ( e.getSource() == this.btnCiseaux ) sRet = this.ctrl.getNom( 2 );
-
-		this.panelCentral.setImageGauche(sRet);
+		if ( e.getSource() == this.btnPierre  ) this.panelCentral.setImageGauche(this.btnPierre .getText());
+		if ( e.getSource() == this.btnFeuille ) this.panelCentral.setImageGauche(this.btnFeuille.getText());
+		if ( e.getSource() == this.btnCiseaux ) this.panelCentral.setImageGauche(this.btnCiseaux.getText());
 	}
 }
