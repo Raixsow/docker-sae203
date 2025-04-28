@@ -1,15 +1,19 @@
 package Pierre_Feuille_Ciseaux.serveur;
 
 import java.net.*;
-import source.metier.PFC;
+import Pierre_Feuille_Ciseaux.metier.PFC;
+import Pierre_Feuille_Ciseaux.Controleur;
 
 public class Serveur
 {
 	public static void main(String[] args)
 	{
 		String res1, res2;
+		String coup1, coup2;
 		int choixJoueur1, choixJoueur2;
-		int port = 40000;
+		int resultat;
+
+		int port;
 
 		try ( ServerSocket serveur = new ServerSocket(port) )
 		{
@@ -26,13 +30,16 @@ public class Serveur
 
 			while ( joueur1.getNbPoints() > 10 || joueur2.getNbPoints() > 10 )
 			{
-				joueur1.envoyerCoup();
-				joueur2.envoyerCoup();
+				joueur1.setCoup();
+				coup1 = 
 
-				choixJoueur1 = joueur1.recevoirChoix();
-				choixJoueur2 = joueur2.recevoirChoix();
+				joueur2.setCoup();
+				coup2 =
 
-				int resultat = PFC.determinerGagnant(choixJoueur1, choixJoueur2)
+				choixJoueur1 = joueur1.getChoix();
+				choixJoueur2 = joueur2.getChoix();
+
+				resultat = PFC.determinerGagnant(choixJoueur1, choixJoueur2);
 				
 				if      (resultat == 0) res1 = res2 = "Égalité !";
 				else if (resultat == 1)

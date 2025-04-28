@@ -9,8 +9,6 @@ public class Joueur
 	private static int nbJoueur = 0; 
 	
     private Socket socket;
-    private DataInputStream in;
-    private DataOutputStream out;
     private int choix;
 
 	private int  numJoueur;
@@ -39,12 +37,13 @@ public class Joueur
 	public void ajouterPoint() { this.nbPoints++;      }
 
 
-	public void envoyerCoup (String message ) { out.writeUTF( message  ); }
-	public void envoyerResultat(String resultat) { out.writeUTF( resultat ); }
+	public void setCoup(String coup) { this.choix = coup; }
 
-	public int recevoirChoix() throws Exception
+	public void getResultat(String resultat) { }
+
+	public int recevoirChoix()
 	{
-        choix = in.readInt();
+        choix = 
         return choix;
     }
 }
