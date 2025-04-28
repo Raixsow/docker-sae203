@@ -22,7 +22,7 @@ public class FrameAppli extends JFrame implements ActionListener
 
 		this.setLayout( new BorderLayout() );
 
-		this.setTitle("Pierre-Feuille-Ciseaux");
+		this.setTitle( "Pierre-Feuille-Ciseaux");
 		this.setSize(875, 625);
 
 		/*------------------------ */
@@ -63,5 +63,14 @@ public class FrameAppli extends JFrame implements ActionListener
 		if ( e.getSource() == this.btnPierre  ) this.panelCentral.setImageGauche(this.btnPierre .getText());
 		if ( e.getSource() == this.btnFeuille ) this.panelCentral.setImageGauche(this.btnFeuille.getText());
 		if ( e.getSource() == this.btnCiseaux ) this.panelCentral.setImageGauche(this.btnCiseaux.getText());
+	}
+
+	public int setChoix()
+	{
+		if ( this.btnPierre.getText().equals( "Pierre"  ) ) return 0;
+		if ( this.btnPierre.getText().equals( "Feuille" ) ) return 1;
+		if ( this.btnPierre.getText().equals( "Ciseaux" ) ) return 2;
+
+		return -1;
 	}
 }

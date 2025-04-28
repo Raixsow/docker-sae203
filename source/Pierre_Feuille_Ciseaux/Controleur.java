@@ -14,9 +14,9 @@ public class Controleur
 		this.pfc        = new PFC();
 	}
 
-	public String getNom(int choix)
+	public int setChoix()
 	{
-		return this.pfc.getNom( choix );
+		return this.frameAppli.setChoix();
 	}
 
 	public static void main(String[] args)
