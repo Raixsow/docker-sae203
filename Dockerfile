@@ -9,5 +9,11 @@ run apt-get update && \
 # Copier les fichiers de l'hôte vers l'image
 copy ./source /usr/local/games
 
+# Compile tous les fichiers dans un répertoire annexe "class"
+run javac @compile.list -d ../class
+
+# Exécute le jeu
+cmd ["java", ""]
+
 # Exposer le port 80
 expose 80
