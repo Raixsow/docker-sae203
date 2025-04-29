@@ -67,4 +67,3 @@ java Client
 ```
 
 Bonne chance à vous pour le Pierre-Feuille-Ciseaux !!
-
