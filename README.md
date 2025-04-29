@@ -1,5 +1,31 @@
 ### Projet Pierre-Feuille-Ciseau ###
 
+# Pierre-Feuille-Ciseaux - Projet Java
+
+## Résumé du Projet
+Ce projet consiste à développer un jeu multijoueur de Pierre-Feuille-Ciseaux en Java.  
+Le serveur gère les connexions de deux joueurs, les interactions et la logique de jeu.  
+Chaque joueur peut saisir ses choix via le client, et le serveur détermine le gagnant de chaque manche.
+
+---
+
+## Les Classes Utilisées
+
+### **Classe Serveur**
+Gère la logique du jeu, la communication avec les deux clients et le calcul du gagnant.
+
+### **Classe Client**
+Permet aux joueurs de se connecter au serveur, de saisir leurs choix, et d'afficher les résultats.
+
+### **Classe Joueur**
+Modèle représentant les joueurs, stocke leurs noms, points et choix.
+
+### **Classe PFC**
+Contient les méthodes utilitaires pour déterminer le gagnant selon les règles du jeu.
+
+---
+
+
 ### Récupération du projet ###
 
 Dans le cas où votre répertoire n'a pas de sous-répertoire '.git', écrivez cette commande:
