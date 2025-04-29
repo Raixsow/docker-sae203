@@ -2,6 +2,12 @@
 
 ### Récupération du projet ###
 
+Dans le cas où votre répertoire n'a pas de sous-répertoire '.git', écrivez cette commande:
+```shell
+git init
+``` 
+
+Cloner le projet de cette même page github pour le récupérer.
 ```shell
 git clone git@github.com:Raixsow/docker-sae203.git
 ```
@@ -26,6 +32,7 @@ On se déplace dans le répertoire créé avec la commande 'git clone'
 ```shell
 cd docker-sae203/source
 ```
+
 On compile l'ensemble des fichiers:
 ```shell
 javac *.java
