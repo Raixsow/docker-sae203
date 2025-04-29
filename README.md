@@ -1,6 +1,4 @@
-### Projet Pierre-Feuille-Ciseau ###
-
-# Pierre-Feuille-Ciseaux - Projet Java
+# Pierre-Feuille-Ciseaux en Java
 
 ## Résumé du Projet
 Ce projet consiste à développer un jeu multijoueur de Pierre-Feuille-Ciseaux en Java.  
@@ -24,7 +22,6 @@ Modèle représentant les joueurs, stocke leurs noms, points et choix.
 Contient les méthodes utilitaires pour déterminer le gagnant selon les règles du jeu.
 
 ---
-
 
 ### Récupération du projet ###
 
