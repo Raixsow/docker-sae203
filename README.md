@@ -17,9 +17,9 @@ git clone git@github.com:Raixsow/docker-sae203.git
 Création d'une image Docker:
 ```shell
 docker build -t <nom-image> .
-docker ps
+docker images
 ```
-Récupérer ce qui est écrit dans la section : "CONTAINER ID"
+et assurez-vous que l'image que vous venez de créer est bien inscrit dans la liste. 
 
 Création du conteneur (serveur) sur Docker:
 ```shell
