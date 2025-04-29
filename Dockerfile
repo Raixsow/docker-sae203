@@ -7,13 +7,16 @@ run apt-get update && \
     apt-get install -y default-jdk \
     apache2
 
-# Copier les fichiers de l'hôte vers l'image
-copy ./source /usr/local/games/
+# Creation d'un repertoire pour l'application
+workdir usr/local/app
 
-# Compile tous les fichiers dans un répertoire annexe "class"
+# Copier les fichiers de l'hôte vers l'image
+copy ./source /usr/local/app/
+
+# Compile tous les fichiers dans un repertoire annexe "class"
 run javac @compile.list -d ../class
 
-# Exécute le jeu
+# Execute le jeu
 cmd ["java", "Pierre_Feuille_Ciseaux.serveur.Serveur"]
 
 # Exposer le port 45369

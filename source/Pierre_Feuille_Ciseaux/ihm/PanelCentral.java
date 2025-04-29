@@ -15,7 +15,7 @@ public class PanelCentral extends JPanel
 		this.setLayout( new GridLayout(1, 3) );
 
 		/*------------------------ */
-		/* Création des composants */
+		/* Creation des composants */
 		/*------------------------ */
 		this.lblChoixPerso      = new JLabel( new ImageIcon( "Pierre_Feuille_Ciseaux/images/Vide.png" ) );
 		this.lblChoixAdversaire = new JLabel( new ImageIcon( "Pierre_Feuille_Ciseaux/images/Vide.png" ) );

@@ -24,13 +24,13 @@ public class PanelNord extends JPanel
 		this.setLayout( new GridLayout(1, 3) );
 
 		/*------------------------ */
-		/* Création des composants */
+		/* Creation des composants */
 		/*------------------------ */
 		lblJoueur1         	  = new JLabel( "Joueur 1"          , SwingConstants.CENTER );
 		lblNbPointsJoueur1 	  = new JLabel( "Nombre de points :", SwingConstants.CENTER );
 		this.lblPointsJoueur1 = new JLabel( "0"                 , SwingConstants.CENTER );
 
-		lblResultat   		  = new JLabel( "Résultat"			, SwingConstants.CENTER );
+		lblResultat   		  = new JLabel( "Resultat"			, SwingConstants.CENTER );
 		lblMinuteur   		  = new JLabel( "Temps :" 			, SwingConstants.CENTER );
 		this.lblTemps 		  = new JLabel( "10"      			, SwingConstants.CENTER );
 

@@ -26,7 +26,7 @@ public class FrameAppli extends JFrame implements ActionListener
 		this.setSize(875, 625);
 
 		/*------------------------ */
-        /* Création des composants */
+        /* Creation des composants */
         /*------------------------ */
 		this.btnPierre  = new JButton( "Pierre"  );
 		this.btnFeuille = new JButton( "Feuille" );
