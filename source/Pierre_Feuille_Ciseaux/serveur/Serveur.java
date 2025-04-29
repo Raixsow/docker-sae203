@@ -11,9 +11,6 @@ import Pierre_Feuille_Ciseaux.Controleur;
 
 public class Serveur
 {
-	private Joueur joueur1;
-	private Joueur joueur2;
-
 	public static void main(String[] args)
 	{
 		String res1, res2;

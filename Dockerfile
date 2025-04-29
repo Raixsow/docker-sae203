@@ -1,13 +1,14 @@
-# Utiliser l'image debia officielle comme image parent
+# Utiliser l'image debian officielle comme image parent
 from debian:latest
 
 # Installer des services et des packages
 run apt-get update && \
-    apt-get -y install  \
+    apt-get -y install && \
+    apt-get install -y default-jdk \
     apache2
 
 # Copier les fichiers de l'hôte vers l'image
-copy ./source /usr/local/games
+copy ./source /usr/local/games/
 
 # Compile tous les fichiers dans un répertoire annexe "class"
 run javac @compile.list -d ../class
@@ -15,5 +16,5 @@ run javac @compile.list -d ../class
 # Exécute le jeu
 cmd ["java", "Pierre_Feuille_Ciseaux.serveur.Serveur"]
 
-# Exposer le port 80
-expose 80
+# Exposer le port 45369
+expose 45369
