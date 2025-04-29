@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Présentation du projet Pierre-Feuille-Ciseaux en Java">
+    <meta name="author" content="Ton Nom ou Équipe">
+    <title>Pierre-Feuille-Ciseaux</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Ajoute un fichier CSS si nécessaire -->
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <h1>Pierre-Feuille-Ciseaux - Projet Java</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Résumé</a></li>
+                <li><a href="#classes">Les Classes</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section principale -->
+    <main>
+        <section id="about">
+            <h2>Résumé du Projet</h2>
+            <p>Ce projet consiste à développer un jeu multijoueur de Pierre-Feuille-Ciseaux en Java. 
+               Le serveur gère les connexions de deux joueurs, les interactions et la logique de jeu. 
+               Chaque joueur peut saisir ses choix via le client, et le serveur détermine le gagnant de chaque manche.</p>
+        </section>
+
+        <section id="classes">
+            <h2>Les Classes Utilisées</h2>
+            <ul>
+                <li>
+                    <strong>Classe Serveur</strong> : 
+                    <p>Gère la logique du jeu, la communication avec les deux clients et le calcul du gagnant.</p>
+                </li>
+                <li>
+                    <strong>Classe Client</strong> : 
+                    <p>Permet aux joueurs de se connecter au serveur, de saisir leurs choix, et d'afficher les résultats.</p>
+                </li>
+                <li>
+                    <strong>Classe Joueur</strong> : 
+                    <p>Modèle représentant les joueurs, stocke leurs noms, points et choix.</p>
+                </li>
+                <li>
+                    <strong>Classe PFC</strong> : 
+                    <p>Contient les méthodes utilitaires pour déterminer le gagnant selon les règles du jeu.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2025 Projet Pierre-Feuille-Ciseaux | Réalisé avec Java</p>
+    </footer>
+</body>
+</html>
