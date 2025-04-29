@@ -1,5 +1,3 @@
-package Pierre_Feuille_Ciseaux.metier;
-
 public class PFC
 {
 	private static final int PIERRE  = 0;
@@ -17,7 +15,7 @@ public class PFC
 
 	public static int determinerGagnant(int choix1, int choix2)
 	{
-		if ( choix1 == choix2) return 0; // Egalité
+		if ( choix1 == choix2) return 0; // Egalite
 
 		if ( choix1 == PFC.PIERRE  && choix2 == PFC.CISEAUX  || 
 			 choix1 == PFC.FEUILLE && choix2 == PFC.PIERRE   ||

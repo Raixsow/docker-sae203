@@ -1,13 +1,7 @@
-package Pierre_Feuille_Ciseaux.serveur;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.*;
-
-import Pierre_Feuille_Ciseaux.metier.Joueur;
-import Pierre_Feuille_Ciseaux.metier.PFC;
-import Pierre_Feuille_Ciseaux.Controleur;
 
 public class Serveur
 {
@@ -29,17 +23,17 @@ public class Serveur
 
 				// Joueur 1:
 				Socket client1 = ss.accept();
-				System.out.println("Joueur 1 connecté...");
+				System.out.println("Joueur 1 connecte...");
 				PrintWriter out = new PrintWriter(client1.getOutputStream(), true);
 				BufferedReader in = new BufferedReader(new InputStreamReader(client1.getInputStream()));
-				out.println("Joueur 1 connecté...");
+				out.println("Joueur 1 connecte...");
 
 				// Joueur 2:
 				Socket client2 = ss.accept();
-				System.out.println("Joueur 2 connecté...");
+				System.out.println("Joueur 2 connecte...");
 				PrintWriter out2 = new PrintWriter(client2.getOutputStream(), true);
 				BufferedReader in2 = new BufferedReader(new InputStreamReader(client2.getInputStream()));
-				out2.println("Joueur 2 connecté...");
+				out2.println("Joueur 2 connecte...");
 
 				/*
 				while ( joueur1.getNbPoints() > 10 || joueur2.getNbPoints() > 10 )
@@ -54,11 +48,11 @@ public class Serveur
 					
 					if (resultat == 0) 
 					{
-						res1 = res2 = "Égalité !";
+						res1 = res2 = "Egalite !";
 					}
 					else if (resultat == 1)
 					{
-						res1 = "Vous avez gagné !";
+						res1 = "Vous avez gagne !";
 						joueur1.recevoirResultat(res1);
 
 						res2 = "Vous avez perdu !";
@@ -69,7 +63,7 @@ public class Serveur
 						res1 = "Vous avez perdu !";
 						joueur1.recevoirResultat(res1);
 
-						res2 = "Vous avez gagné !";
+						res2 = "Vous avez gagne !";
 						joueur2.recevoirResultat(res2);
 					}
 				}

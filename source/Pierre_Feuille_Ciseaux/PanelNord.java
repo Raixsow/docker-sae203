@@ -1,5 +1,3 @@
-package Pierre_Feuille_Ciseaux.ihm;
-
 import javax.swing.*;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -12,7 +10,6 @@ public class PanelNord extends JPanel
 
 	public PanelNord()
 	{
-
 		JLabel lblJoueur1  		 ;       
 		JLabel lblNbPointsJoueur1;
 

@@ -1,13 +1,8 @@
-package Pierre_Feuille_Ciseaux.serveur;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-
-import Pierre_Feuille_Ciseaux.Controleur;
-import Pierre_Feuille_Ciseaux.metier.Joueur;
 
 public class Client
 {
@@ -23,7 +18,7 @@ public class Client
 			/* -------------------- */
 			System.out.println( "Connexion au serveur..." );
 			Socket client = new Socket("localhost", 45369);
-			System.out.println("connecté...");
+			System.out.println("connecte...");
 
 			PrintWriter    out = new PrintWriter   ( client.getOutputStream(), true      );
 			BufferedReader in  = new BufferedReader( new InputStreamReader(client.getInputStream() ) );

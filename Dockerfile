@@ -7,17 +7,21 @@ run apt-get update && \
     apt-get install -y default-jdk \
     apache2
 
-# Creation d'un repertoire pour l'application
-workdir usr/local/app
+# Creation des répertoires pour l'application
+workdir /usr/local/app/source
+workdir /usr/local/app/class
 
 # Copier les fichiers de l'hôte vers l'image
-copy ./source /usr/local/app/
+copy ./source                               /usr/local/app/source
+copy ./source/compile.list                  /usr/local/app/source/compile.list
 
-# Compile tous les fichiers dans un repertoire annexe "class"
-run javac @compile.list -d ../class
+# Se déplace dans le répertoire source et compile les différents fichiers
+run cd /usr/local/app/source
+run javac *.java -d ../class
+run cd ../class
 
 # Execute le jeu
-cmd ["java", "Pierre_Feuille_Ciseaux.serveur.Serveur"]
+cmd ["java", "Pierre_Feuille_Ciseaux.Serveur"]
 
 # Exposer le port 45369
 expose 45369

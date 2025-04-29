@@ -1,9 +1,11 @@
 ./Pierre_Feuille_Ciseaux/Controleur.java
 
-./Pierre_Feuille_Ciseaux/ihm/FrameAppli.java
-./Pierre_Feuille_Ciseaux/ihm/PanelCentral.java
+./Pierre_Feuille_Ciseaux/FrameAppli.java
+./Pierre_Feuille_Ciseaux/PanelNord.java
+./Pierre_Feuille_Ciseaux/PanelCentral.java
 
-./Pierre_Feuille_Ciseaux/metier/PFC.java
+./Pierre_Feuille_Ciseaux/PFC.java
+./Pierre_Feuille_Ciseaux/Joueur.java
 
-./Pierre_Feuille_Ciseaux/serveur/Client.java
-./Pierre_Feuille_Ciseaux/serveur/Serveur.java
+./Pierre_Feuille_Ciseaux/Client.java
+./Pierre_Feuille_Ciseaux/Serveur.java

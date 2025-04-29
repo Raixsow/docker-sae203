@@ -1,6 +1,3 @@
-package Pierre_Feuille_Ciseaux.ihm;
-
-import Pierre_Feuille_Ciseaux.Controleur;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

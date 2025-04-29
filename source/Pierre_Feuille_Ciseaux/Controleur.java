@@ -1,8 +1,3 @@
-package Pierre_Feuille_Ciseaux;
-
-import Pierre_Feuille_Ciseaux.ihm.*;
-import Pierre_Feuille_Ciseaux.metier.*;
-
 public class Controleur
 {
 	private FrameAppli frameAppli;

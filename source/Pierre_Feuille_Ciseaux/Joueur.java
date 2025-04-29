@@ -1,7 +1,3 @@
-package Pierre_Feuille_Ciseaux.metier;
-
-import Pierre_Feuille_Ciseaux.Controleur;
-
 public class Joueur
 {
 	private Controleur ctrl;
