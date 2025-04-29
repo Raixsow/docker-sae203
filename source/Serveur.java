@@ -16,7 +16,7 @@ public class Serveur
 		int choixJoueur1, choixJoueur2;
 		int resultat;
 
-		int port = 45369;
+		int port = 46035;
 
 		while ( true )
 		{
