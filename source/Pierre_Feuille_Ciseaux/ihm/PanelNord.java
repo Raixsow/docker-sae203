@@ -6,37 +6,42 @@ import java.awt.GridLayout;
 
 public class PanelNord extends JPanel
 {
-	private FrameAppli frameAppli;
-
 	private JLabel lblPointsJoueur1;
 	private JLabel lblPointsJoueur2;
 	private JLabel lblTemps;
 
-	public PanelNord(FrameAppli frameAppli)
+	public PanelNord()
 	{
-		this.frameAppli = frameAppli;
 
+		JLabel lblJoueur1  		 ;       
+		JLabel lblNbPointsJoueur1;
+
+		JLabel lblResultat;
+		JLabel lblMinuteur;
+
+		JLabel lblJoueur2        ;
+		JLabel lblNbPointsJoueur2;
 		this.setLayout( new GridLayout(1, 3) );
 
 		/*------------------------ */
-        /* Création des composants */
-        /*------------------------ */
-		JLabel lblJoueur1         = new JLabel( "Joueur 1"          , SwingConstants.CENTER );
-		JLabel lblNbPointsJoueur1 = new JLabel( "Nombre de points :", SwingConstants.CENTER );
-		this.lblPointsJoueur1     = new JLabel( "0"                 , SwingConstants.CENTER );
+		/* Création des composants */
+		/*------------------------ */
+		lblJoueur1         	  = new JLabel( "Joueur 1"          , SwingConstants.CENTER );
+		lblNbPointsJoueur1 	  = new JLabel( "Nombre de points :", SwingConstants.CENTER );
+		this.lblPointsJoueur1 = new JLabel( "0"                 , SwingConstants.CENTER );
 
-		JLabel lblResultat = new JLabel( "Résultat", SwingConstants.CENTER );
-		JLabel lblMinuteur = new JLabel( "Temps :" , SwingConstants.CENTER );
-		this.lblTemps      = new JLabel( "10"      , SwingConstants.CENTER );
+		lblResultat   		  = new JLabel( "Résultat"			, SwingConstants.CENTER );
+		lblMinuteur   		  = new JLabel( "Temps :" 			, SwingConstants.CENTER );
+		this.lblTemps 		  = new JLabel( "10"      			, SwingConstants.CENTER );
 
-		JLabel lblJoueur2         = new JLabel( "Joueur 2"          , SwingConstants.CENTER );
-		JLabel lblNbPointsJoueur2 = new JLabel( "Nombre de points :", SwingConstants.CENTER );
-		this.lblPointsJoueur2     = new JLabel( "0"                 , SwingConstants.CENTER );
+		lblJoueur2         	  = new JLabel( "Joueur 2"          , SwingConstants.CENTER );
+		lblNbPointsJoueur2 	  = new JLabel( "Nombre de points :", SwingConstants.CENTER );
+		this.lblPointsJoueur2 = new JLabel( "0"                 , SwingConstants.CENTER );
 
 
 		/* ----------------------------- */
-        /* positionnement des composants */
-        /* ----------------------------- */
+		/* positionnement des composants */
+		/* ----------------------------- */
 		this.ajouterAuPanel( lblJoueur1      , lblNbPointsJoueur1, this.lblPointsJoueur1 );
 		this.ajouterAuPanel( lblResultat     , lblMinuteur       , this.lblTemps         );
 		this.ajouterAuPanel( lblJoueur2      , lblNbPointsJoueur2, this.lblPointsJoueur2 );

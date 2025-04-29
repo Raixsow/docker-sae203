@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 public class FrameAppli extends JFrame implements ActionListener
 {
-	private Controleur ctrl;
+	private Controleur 	 ctrl;
 	private PanelCentral panelCentral;
 	private PanelNord    panelNord;
 
@@ -32,12 +32,12 @@ public class FrameAppli extends JFrame implements ActionListener
 		this.btnFeuille = new JButton( "Feuille" );
 		this.btnCiseaux = new JButton( "Ciseaux" );
 
-		this.panelCentral = new PanelCentral( this );
-		this.panelNord    = new PanelNord   ( this );
-
+		this.panelCentral = new PanelCentral();
+		this.panelNord    = new PanelNord   ();
+		
 		/* ----------------------------- */
-        /* positionnement des composants */
-        /* ----------------------------- */
+		/* positionnement des composants */
+		/* ----------------------------- */
 		JPanel panelSud = new JPanel();
 		panelSud.add ( this.btnPierre  );
 		panelSud.add ( this.btnFeuille );
@@ -48,8 +48,8 @@ public class FrameAppli extends JFrame implements ActionListener
 		this.add( this.panelCentral, BorderLayout.CENTER );
 
 		/* ------------------------- */
-        /* Activation des composants */
-        /* ------------------------- */
+		/* Activation des composants */
+		/* ------------------------- */
 		this.btnPierre .addActionListener( this );
 		this.btnFeuille.addActionListener( this );
 		this.btnCiseaux.addActionListener( this );
@@ -67,9 +67,9 @@ public class FrameAppli extends JFrame implements ActionListener
 
 	public int setChoix()
 	{
-		if ( this.btnPierre.getText().equals( "Pierre"  ) ) return 0;
-		if ( this.btnPierre.getText().equals( "Feuille" ) ) return 1;
-		if ( this.btnPierre.getText().equals( "Ciseaux" ) ) return 2;
+		if ( this.btnPierre .getText().equals( "Pierre"  ) ) return 0;
+		if ( this.btnFeuille.getText().equals( "Feuille" ) ) return 1;
+		if ( this.btnCiseaux.getText().equals( "Ciseaux" ) ) return 2;
 
 		return -1;
 	}

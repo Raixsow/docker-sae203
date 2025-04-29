@@ -17,7 +17,7 @@ public class PFC
 	{
 		if ( choix1 == choix2) return 0; // Egalité
 
-		if ( choix1 == PFC.PIERRE  && choix2 == PFC.FEUILLE  || 
+		if ( choix1 == PFC.PIERRE  && choix2 == PFC.CISEAUX  || 
 			 choix1 == PFC.FEUILLE && choix2 == PFC.PIERRE   ||
 			 choix1 == PFC.CISEAUX && choix2 == PFC.FEUILLE     ) return 1; // Joueur 1 gagnant
 			 

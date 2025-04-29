@@ -13,7 +13,7 @@ copy ./source /usr/local/games
 run javac @compile.list -d ../class
 
 # Exécute le jeu
-cmd ["java", ""]
+cmd ["java", "Pierre_Feuille_Ciseaux.serveur.Serveur"]
 
 # Exposer le port 80
 expose 80

@@ -4,3 +4,6 @@
 ./Pierre_Feuille_Ciseaux/ihm/PanelCentral.java
 
 ./Pierre_Feuille_Ciseaux/metier/PFC.java
+
+./Pierre_Feuille_Ciseaux/serveur/Client.java
+./Pierre_Feuille_Ciseaux/serveur/Serveur.java
