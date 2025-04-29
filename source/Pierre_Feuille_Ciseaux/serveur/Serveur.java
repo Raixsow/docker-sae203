@@ -11,6 +11,9 @@ import Pierre_Feuille_Ciseaux.Controleur;
 
 public class Serveur
 {
+	private Joueur joueur1;
+	private Joueur joueur2;
+
 	public static void main(String[] args)
 	{
 		String res1, res2;
@@ -28,54 +31,55 @@ public class Serveur
 				ServerSocket ss = new ServerSocket(port);
 
 				// Joueur 1:
-				Socket joueur1 = ss.accept();
+				Socket client1 = ss.accept();
 				System.out.println("Joueur 1 connecté...");
-
-				PrintWriter out = new PrintWriter(joueur1.getOutputStream(), true);
-				BufferedReader in = new BufferedReader(new InputStreamReader(joueur1.getInputStream()));
+				PrintWriter out = new PrintWriter(client1.getOutputStream(), true);
+				BufferedReader in = new BufferedReader(new InputStreamReader(client1.getInputStream()));
 				out.println("Joueur 1 connecté...");
 
 				// Joueur 2:
-				Socket joueur2 = ss.accept();
+				Socket client2 = ss.accept();
 				System.out.println("Joueur 2 connecté...");
-
-				PrintWriter out2 = new PrintWriter(joueur2.getOutputStream(), true);
-				BufferedReader in2 = new BufferedReader(new InputStreamReader(joueur2.getInputStream()));
-				out.println("Joueur 2 connecté...");
+				PrintWriter out2 = new PrintWriter(client2.getOutputStream(), true);
+				BufferedReader in2 = new BufferedReader(new InputStreamReader(client2.getInputStream()));
+				out2.println("Joueur 2 connecté...");
 
 				/*
 				while ( joueur1.getNbPoints() > 10 || joueur2.getNbPoints() > 10 )
 				{
-					joueur1.setCoup();
-					coup1 = 
-
-					joueur2.setCoup();
-					coup2 =
+					joueur1.setChoix();
+					joueur2.setChoix();
 
 					choixJoueur1 = joueur1.getChoix();
 					choixJoueur2 = joueur2.getChoix();
 
 					resultat = PFC.determinerGagnant(choixJoueur1, choixJoueur2);
 					
-					if      (resultat == 0) res1 = res2 = "Égalité !";
+					if (resultat == 0) 
+					{
+						res1 = res2 = "Égalité !";
+					}
 					else if (resultat == 1)
 					{
 						res1 = "Vous avez gagné !";
+						joueur1.recevoirResultat(res1);
+
 						res2 = "Vous avez perdu !";
+						joueur2.recevoirResultat(res2);
 					} 
 					else
 					{
 						res1 = "Vous avez perdu !";
-						res2 = "Vous avez gagné !";
-					}
+						joueur1.recevoirResultat(res1);
 
-					joueur1.envoyerResultat(res1 + " (" + PFC.getNom(choixJoueur1) + " vs " + PFC.getNom(choixJoueur2) + ")");
-					joueur2.envoyerResultat(res2 + " (" + PFC.getNom(choixJoueur2) + " vs " + PFC.getNom(choixJoueur1) + ")");
+						res2 = "Vous avez gagné !";
+						joueur2.recevoirResultat(res2);
+					}
 				}
 				*/
-				
-				joueur1.close();
-				joueur2.close();
+
+				client1.close();
+				client2.close();
 			}
 			catch ( Exception e ) { System.out.println("Erreur serveur: Port inexistant !"); }
 		}

@@ -28,23 +28,24 @@ public class Client
 			PrintWriter    out = new PrintWriter   ( client.getOutputStream(), true      );
 			BufferedReader in  = new BufferedReader( new InputStreamReader(client.getInputStream() ) );
 
-			Controleur ctrl = new Controleur();
-
 			/* ------------------------ */
 			/* Gestion du joueur 1 et 2 */
 			/* ------------------------ */
 			String joueurConnecte = in.readLine();
+			System.out.println( joueurConnecte );	
 
-			if   ( joueurConnecte.equals("Joueur 1 connecté...") ) joueur = new Joueur( ctrl, "Joueur 1" );
-			else                                                            joueur = new Joueur( ctrl, "Joueur 2" );
+			Controleur ctrl = new Controleur();
+
+			if   ( joueurConnecte.equals("1") ) joueur = new Joueur( ctrl, "Joueur 1" );
+			else                                         joueur = new Joueur( ctrl, "Joueur 2" );
 
 			/* ------------------- */
 			/* Fermeture du client */
 			/* ------------------- */
-			in.close();				//
+			in.close();
 			out.close();
 			client.close();
 		}
-		catch ( IOException e) {}
+		catch ( IOException e ) {}
 	}
 }

@@ -7,13 +7,15 @@ public class PFC
 	private static final int CISEAUX = 2;
 
 	private int nbTour;
+	private Joueur joueur1;
+	private Joueur joueur2;
 
 	public PFC()
 	{
 		this.nbTour = 0;
 	}
 
-	public int determinerGagnant(int choix1, int choix2)
+	public static int determinerGagnant(int choix1, int choix2)
 	{
 		if ( choix1 == choix2) return 0; // Egalité
 
