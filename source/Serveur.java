@@ -47,7 +47,9 @@ public class Serveur
 				/* Joueur Connecte */
 				/* --------------- */
 				String joueur1Connecte = in.readLine();
-				if   ( joueur1Connecte.equals( "Joueur 1 pret") ) joueur1 = new Joueur( "Joueur 1" );
+				String joueur2Connecte = in2.readLine();
+
+				if   ( joueur1Connecte.equals( "1 pret") ) joueur1 = new Joueur( "Joueur 1" );
 				else                                                       joueur2 = new Joueur( "Joueur 2" );
 
 				/* ----------------------------- */

@@ -17,7 +17,7 @@ public class Client
 			/* Connexion au serveur */
 			/* -------------------- */
 			System.out.println( "Connexion au serveur..." );
-			Socket client = new Socket("localhost", 45035);
+			Socket client = new Socket("localhost", 46035);
 
 			PrintWriter    out = new PrintWriter   ( client.getOutputStream(), true      );
 			BufferedReader in  = new BufferedReader( new InputStreamReader(client.getInputStream() ) );
@@ -28,8 +28,8 @@ public class Client
 			String joueurConnecte = in.readLine();
 			System.out.println( joueurConnecte );	
 
-			if   ( joueurConnecte.charAt(7) == '1' ) out.println( "Joueur 1 pret" );
-			else                                           out.println( "Joueur 2 pret" ); 
+			if   ( joueurConnecte.charAt(0) == '1' ) out.println( "1 pret" );
+			else                                           out.println( "2 pret" ); 
 
 			/* --------------- */
 			/* Choix du joueur */
