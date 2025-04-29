@@ -66,4 +66,8 @@ On exécute le fichier Client:
 java Client
 ```
 
+---
+### Contrainte du projet:
+Cependant, le projet n'est disponible qu'en local et non et en distantiel comme un mode multijoueur sur le serveur. On vous invite donc à lancer 2 terminaux pour pouvoir profiter pleinement du jeu.
+
 Bonne chance à vous pour le Pierre-Feuille-Ciseaux !!
