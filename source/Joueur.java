@@ -1,21 +1,19 @@
 public class Joueur
 {
-	private Controleur ctrl;
-
 	private int choix;
 	private String nom;
-	private int NbPoints;
+	private int nbPoints;
 
-	public Joueur(Controleur ctrl, String nom)
+	public Joueur(String nom)
 	{
-		this.ctrl = ctrl;
-		this.nom  = nom;
+		this.nom      = nom;
+		this.nbPoints = 0;
 	}
 
-	public void setChoix(int choix) { this.choix = this.ctrl.setChoix();}
+	public void setChoix(int choix)   { this.choix = choix;}
+	public void setPoint() { this.nbPoints++; }
 
 	public int    getChoix   () { return this.choix   ; }
 	public String getNom     () { return this.nom     ; }
-	public int    getNbPoints() { return this.NbPoints; }
-
+	public int    getNbPoints() { return this.nbPoints; }
 }

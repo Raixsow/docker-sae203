@@ -4,15 +4,6 @@ public class PFC
 	private static final int FEUILLE = 1;
 	private static final int CISEAUX = 2;
 
-	private int nbTour;
-	private Joueur joueur1;
-	private Joueur joueur2;
-
-	public PFC()
-	{
-		this.nbTour = 0;
-	}
-
 	public static int determinerGagnant(int choix1, int choix2)
 	{
 		if ( choix1 == choix2) return 0; // Egalite
