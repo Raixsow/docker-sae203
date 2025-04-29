@@ -22,10 +22,19 @@ docker run --name <nom-du-conteneur> -d -p <port-hôte>:80 <nom-image>
 
 ### Connexion au serveur de Jeu
 
+On se déplace dans le répertoire créé avec la commande 'git clone'
+```shell
 cd docker-sae203/source
-
+```
+On compile l'ensemble des fichiers:
+```shell
 javac *.java
+```
 
+On exécute le fichier Client:
+```shell
 java Client
+```
 
+Bonne chance à vous pour le Pierre-Feuille-Ciseaux !!
 
