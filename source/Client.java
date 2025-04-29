@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.Scanner;
+
 
 public class Client
 {
@@ -10,6 +12,8 @@ public class Client
 	{
 		String nomMachine;
 		Joueur joueur;
+
+		Scanner scanner = new Scanner(System.in);
 
 		try
 		{
@@ -28,21 +32,25 @@ public class Client
 			String joueurConnecte = in.readLine();
 			System.out.println( joueurConnecte );	
 
-			if   ( joueurConnecte.charAt(0) == '1' ) out.println( "1 pret" );
-			else                                           out.println( "2 pret" ); 
+			if   ( joueurConnecte.charAt(0) == '1' ) out.println ( "1 prêt" );
+			else                                           out.println ( "2 prêt" );
 
 			/* --------------- */
 			/* Choix du joueur */
 			/* --------------- */
-			String messageChoix = in.readLine();
-			out.println( in.readLine() );
+			String messageChoix = "";
+			while ( ! messageChoix.equals( "Joueur 1 a gagné !" ) || ! messageChoix.equals( "Joueur 2 a gagné !") )
+			{
+				messageChoix = in.readLine();
+				System.out.println( messageChoix );
+				out.println( scanner.nextInt() );
+			}
 
-			/* ------------------- */
-			/* Fermeture du client */
-			/* ------------------- */
+			String messageGagnant = in.readLine();
+			System.out.println( in.readLine() );
+
 			in.close();
 			out.close();
-			client.close();
 		}
 		catch ( IOException e ) {}
 	}

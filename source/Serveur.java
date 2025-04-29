@@ -18,12 +18,13 @@ public class Serveur
 
 		int port = 46035;
 
-		while ( true )
+		try
 		{
-			try
+			ServerSocket ss = new ServerSocket(port);
+
+			while ( true )
 			{
 				System.out.println("En attente de deux joueurs sur le serveur : " + port);
-				ServerSocket ss = new ServerSocket(port);
 
 				/* -------- */
 				/* Joueur 1 */
@@ -32,7 +33,7 @@ public class Serveur
 				System.out.println("Joueur 1 connecte...");
 				PrintWriter out = new PrintWriter(client1.getOutputStream(), true);
 				BufferedReader in = new BufferedReader(new InputStreamReader(client1.getInputStream()));
-				out.println("Joueur 1 connecte...");
+				out.println("1 connecte...");
 
 				/* -------- */
 				/* Joueur 2 */
@@ -41,7 +42,9 @@ public class Serveur
 				System.out.println("Joueur 2 connecte...");
 				PrintWriter out2 = new PrintWriter(client2.getOutputStream(), true);
 				BufferedReader in2 = new BufferedReader(new InputStreamReader(client2.getInputStream()));
-				out2.println("Joueur 2 connecte...");
+				out2.println("2 connecte...");
+
+				System.out.println("Les deux joueurs sont arrivés");
 
 				/* --------------- */
 				/* Joueur Connecte */
@@ -49,63 +52,82 @@ public class Serveur
 				String joueur1Connecte = in.readLine();
 				String joueur2Connecte = in2.readLine();
 
-				if   ( joueur1Connecte.equals( "1 pret") ) joueur1 = new Joueur( "Joueur 1" );
-				else                                                       joueur2 = new Joueur( "Joueur 2" );
+				joueur1 = new Joueur( "Joueur 1" );
+				joueur2 = new Joueur( "Joueur 2" );
 
 				/* ----------------------------- */
 				/* Jeu du Pierre-Feuille-Ciseaux */
 				/* ----------------------------- */
-				while ( joueur1.getNbPoints() != 10 || joueur2.getNbPoints() != 10 )
+				int cptManche = 1;
+
+				while (joueur1.getNbPoints() < 10 && joueur2.getNbPoints() < 10)
 				{
+					System.out.println("Commençons avec la manche n°" + cptManche);
+
 					out.println ( "Choisissez Pierre (0), Feuille (1) ou Ciseaux(2)" );
 					out2.println( "Choisissez Pierre (0), Feuille (1) ou Ciseaux(2)" );
 
 					try
 					{ 
-						int messageChoixJoueur1 = Integer.parseInt( in.readLine()  );
-						int messageChoixJoueur2 = Integer.parseInt( in2.readLine() );
+						int choix1 = Integer.parseInt( in.readLine()  );
+						int choix2 = Integer.parseInt( in2.readLine() );
 
-						joueur1.setChoix( messageChoixJoueur1 );
-						joueur2.setChoix( messageChoixJoueur2 );
+						joueur1.setChoix( choix1 );
+						joueur2.setChoix( choix2 );
+
+						choixJoueur1 = joueur1.getChoix();
+						choixJoueur2 = joueur2.getChoix();
+	
+						resultat = PFC.determinerGagnant(choixJoueur1, choixJoueur2);
+
+						if (resultat == 0) 
+						{
+							res1 = res2 = "Egalite !";
+						}
+						else if (resultat == 1)
+						{
+							res1 = "Joueur 1";
+							res2 = "Joueur 2";
+						} 
+						else
+						{
+							res1 = "Joueur 2";
+							res2 = "Joueur 1";
+						}
+	
+						System.out.println( "Le gagnant de cette manche est : " + res1 + " VS " + res2 );
+						if   ( res1.equals( "joueur 1" ) ) joueur1.setPoint();
+						else                                        joueur2.setPoint();
 					} 
 					catch ( IOException e ) 
 					{ 
-						if   ( joueur1Connecte.equals( "Joueur 1 connecte..." ) ) out.println("Choisissez un nombre entier.");
-						else                                                               out2.println("Choisissez un nombre entier.");
+						System.out.println( "Erreur de saisie d'un des joueurs" ); continue;
 					}
 
-					choixJoueur1 = joueur1.getChoix();
-					choixJoueur2 = joueur2.getChoix();
-
-					resultat = PFC.determinerGagnant(choixJoueur1, choixJoueur2);
-					
-					if (resultat == 0) 
-					{
-						res1 = res2 = "Egalite !";
-					}
-					else if (resultat == 1)
-					{
-						res1 = "Joueur 1";
-						res2 = "Joueur 2";
-					} 
-					else
-					{
-						res1 = "Joueur 2";
-						res2 = "Joueur 1";
-					}
-
-					System.out.println( "Le gagnant de cette manche est : " + res1 + " VS " + res2 );
-					if   ( res1.equals( "joueur 1" ) ) joueur1.setPoint();
-					else                                        joueur2.setPoint();
+					cptManche++;
 				}
 
-				if   ( joueur1.getNbPoints() == 10 ) System.out.println("Joueur 1 a gagné !");
-				else                                 System.out.println("Joueur 2 a gagné !");
+				if ( joueur1.getNbPoints() == 10 ) 
+				{
+					out .println("Joueur 1 a gagné !");
+					out2.println("Joueur 1 a gagné !");
+				}
+				else
+				{
+					out .println("Joueur 2 a gagné !");
+					out2.println("Joueur 2 a gagné !");
+				}
+
+				in .close();
+				in2.close();
+
+				out .close();
+				out2.close();
 
 				client1.close();
 				client2.close();
 			}
-			catch ( Exception e ) { System.out.println("Erreur serveur: Port inexistant !"); }
 		}
+		catch ( Exception e ) { System.out.println("Erreur serveur: Port inexistant !"); }
 	}
 }
